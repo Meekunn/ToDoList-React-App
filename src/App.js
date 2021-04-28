@@ -30,7 +30,7 @@ function App() {
   return (
     <div className="wrapper">
       <Header />
-      <ToDoForm toDoForm = {addTask} />
+      <ToDoForm addTask={addTask} />
       <ToDoList toDoList ={toDoList} handleToggle={handleToggle} />
     </div>
   );
