@@ -18,18 +18,28 @@ function App() {
   }
 
   const addTask = (userInput) => {
-    let add = [...toDoList];
-    add.push({ SN : toDoList.length + 1, task: userInput, done: false});
+    const add = toDoList;
+    add.push({ SN : Date.now(), task: userInput, done: false});
     setToDoList(add)
   };
 
   const deleteList = () => {
-    let clear = [...toDoList];
-    clear = [];
-    setToDoList(clear); 
+    setToDoList([]); 
   }
 
   const clearItem = (SN) =>{
+    const newArr = toDoList ;
+    console.log("newArr", {newArr});
+    const delIdx = newArr.findIndex(el => el.SN===SN);
+    if(delIdx===-1) {
+      alert("Item not found");
+      return;
+    }
+    newArr.splice(delIdx,1);
+    console.log("newArr after splice: i yam here --- ", {newArr});
+    //update state 
+    setToDoList(newArr) ;
+    /**
     let del=toDoList.filter(item=>{
       return item.SN!==SN
     })
@@ -40,6 +50,7 @@ function App() {
     console.log("del",del);
     
     setToDoList(del); 
+    */
   }
   console.log("TDOLIST",toDoList)
 
@@ -47,7 +58,7 @@ function App() {
     <div className="wrapper">
       <Header />
       <ToDoForm addTask={addTask} />
-      <ToDoList toDoList ={toDoList} handleToggle= {handleToggle} deleteList= {deleteList} clearItem={clearItem}/>
+      <ToDoList toDoList={toDoList} handleToggle={handleToggle} deleteList={deleteList} clearItem={clearItem}/>
     </div>
   );
 }

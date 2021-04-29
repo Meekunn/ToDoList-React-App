@@ -7,7 +7,7 @@ const ToDoList = ({toDoList, handleToggle, deleteList, clearItem}) => {
         <div className="lists">
             {toDoList.map((todo,index) => {
                 return(
-                    <Todo key={index} todo = {todo} handleToggle = {handleToggle} deleteList ={deleteList} clearItem={()=>clearItem(index)}/>
+                    <Todo key={`${index}d${todo.SN}`} todo={todo} handleToggle={handleToggle} deleteList={deleteList} clearItem={clearItem}/>
                 )
             })}
             <button className="clear-list" onClick ={deleteList}>Clear</button>

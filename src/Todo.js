@@ -6,15 +6,12 @@ const ToDo = ({todo, handleToggle, clearItem}) => {
         e.preventDefault();
         handleToggle(e.currentTarget.SN)
     }
-    const handleDelete=(e)=>{
-        e.preventDefault();
-        clearItem(e.currentTarget.SN);
-    }
+    
 
     return(
-        <div id = {todo.Sn} key={todo.Sn +todo.task} onClick={handleClick} name ="todo" className= {todo.done ? "todo checked" : "todo"}>
-            {todo.task} 
-            <span><button className="clear"onClick={handleDelete}>&times;</button></span>
+        <div id={todo.SN} onClick={handleClick} name="todo" className={todo.done ? "todo checked" : "todo"}>
+            {todo.task}
+            <span><button className="clear"onClick={()=>clearItem()}>&times;</button></span>
         </div>
     );
 };
