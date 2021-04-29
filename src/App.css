@@ -1,38 +1,76 @@
-.App {
-  text-align: center;
-}
+@import url('https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap');
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*{
+  margin: 0;
+  padding: 0;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body{
+  margin: 20px;
+  padding: 10px;
+  background-color: rgb(70, 41, 151);
+  font-size: 30px;
+  font-family: 'New Tegomin', serif;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.wrapper{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.header{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h1{
+  margin: 1rem;
+  padding: 1rem;
+  font-size: 2em;
+  font-style: italic;
+  font-variant: small-caps;
+}
+form{
+  margin: 1.5rem;
+}
+input{
+  width: 500px;
+  height: 20px;
+  padding: 1em;
+  margin: 5px;
+  border-radius: 15px;
+}
+input:focus{
+  outline: none;
+}
+button{
+  margin: 0, 5px;
+  padding: 10px;
+  border-radius: 15px;
+  background-color: rgb(72, 69, 75);
+  border: 2px solid rgb(40, 35, 44);
+}
+.todo{
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: inherit;
+}
+.checked{
+  text-decoration: line-through;
+}
+.clear{
+  right: 0;
+  padding: 5px 10px;
+}
+.lists{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.lists:nth-child(even){
+  background-color: ivory;
+}
+.lists .clear-list{
+  margin: 2rem;
 }
